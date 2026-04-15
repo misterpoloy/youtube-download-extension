@@ -1,0 +1,48 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pegasus"
+version = "0.1.0"
+description = "Local-first YouTube downloader — Python bridge + Chrome extension"
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.9"
+authors = [{ name = "Pegasus Contributors" }]
+keywords = ["youtube", "downloader", "yt-dlp", "chrome-extension", "video"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Multimedia :: Video",
+    "Topic :: Internet :: WWW/HTTP",
+]
+dependencies = [
+    "yt-dlp>=2025.1.15",
+]
+
+[project.urls]
+Homepage   = "https://github.com/jportiz14/pegasus"
+Repository = "https://github.com/jportiz14/pegasus"
+Issues     = "https://github.com/jportiz14/pegasus/issues"
+
+[project.scripts]
+ytdl1080      = "youtube_downloader.cli:main"
+pegasus-bridge = "youtube_downloader.bridge:main"
+
+[tool.setuptools.packages.find]
+include = ["youtube_downloader*"]
+
+# ── Ruff (Python linter) ──────────────────────
+[tool.ruff]
+line-length    = 100
+target-version = "py39"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+ignore = ["E501"]

@@ -1,0 +1,35 @@
+# ── Credentials & secrets ─────────────────────
+cookies.txt
+.env
+.env.*
+
+# ── Python ────────────────────────────────────
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+*.egg
+dist/
+build/
+.eggs/
+
+# ── Downloads (user output) ───────────────────
+downloads/
+
+# ── Node / Browser extension ──────────────────
+browser_extension/node_modules/
+browser_extension/dist/
+
+# ── macOS ─────────────────────────────────────
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# ── IDE / editor ──────────────────────────────
+.vscode/
+.idea/
+.claude/
+
+# ── Logs ──────────────────────────────────────
+*.log
+npm-debug.log*
