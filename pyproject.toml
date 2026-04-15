@@ -26,6 +26,11 @@ dependencies = [
     "yt-dlp>=2025.1.15",
 ]
 
+[project.optional-dependencies]
+dev = [
+    "ruff>=0.6.0",
+]
+
 [project.urls]
 Homepage   = "https://github.com/jportiz14/pegasus"
 Repository = "https://github.com/jportiz14/pegasus"

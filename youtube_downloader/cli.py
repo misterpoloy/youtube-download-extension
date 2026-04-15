@@ -7,7 +7,6 @@ from collections.abc import Callable, Iterable
 from dataclasses import dataclass
 from pathlib import Path
 
-
 DEFAULT_FORMAT = (
     "bestvideo*[height<=1080]+bestaudio/bestvideo[height<=1080]+bestaudio/"
     "best[height<=1080]"
