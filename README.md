@@ -1,4 +1,4 @@
-# Pegasus
+# Youtube Download Extension
 
 <p align="center">
   <img src="icon.png" alt="Pegasus" width="120" />
