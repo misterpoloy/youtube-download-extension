@@ -102,11 +102,11 @@ Then load `browser_extension/dist/` as an unpacked extension in `chrome://extens
 
 ## Code Style
 
-**Python** — Ruff for linting:
+**Python** — Ruff for linting (already installed via `pip install -e ".[dev]"`):
 
 ```bash
-pip install ruff
 ruff check youtube_downloader/
+ruff check --fix youtube_downloader/    # Auto-fix issues
 ruff format youtube_downloader/
 ```
 

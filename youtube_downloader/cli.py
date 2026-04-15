@@ -3,10 +3,9 @@ from __future__ import annotations
 import argparse
 import shutil
 import sys
+from collections.abc import Callable, Iterable
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Callable, Iterable
-
 
 DEFAULT_FORMAT = (
     "bestvideo*[height<=1080]+bestaudio/bestvideo[height<=1080]+bestaudio/"

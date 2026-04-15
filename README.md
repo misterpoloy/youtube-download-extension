@@ -1,8 +1,11 @@
-# Pegasus
+# Youtube Download Extension
 
-**Local-first YouTube downloader.** A Python bridge + Chrome extension that lets you download any YouTube video up to 1080p directly to your machine — no cloud, no subscription.
+<p align="center">
+  <img src="icon.png" alt="Pegasus" width="120" />
+</p>
 
-[![CI](https://github.com/jportiz14/pegasus/actions/workflows/ci.yml/badge.svg)](https://github.com/jportiz14/pegasus/actions/workflows/ci.yml)
+**Local-first YouTube downloader.** A Python bridge + Chrome extension that lets you download any YouTube video up to 1080p directly to your machine. No cloud, no subscription.
+
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Python 3.9+](https://img.shields.io/badge/python-3.9%2B-blue.svg)](https://www.python.org/)
 [![Node 18+](https://img.shields.io/badge/node-18%2B-green.svg)](https://nodejs.org/)
@@ -15,6 +18,10 @@
 YouTube page  →  Chrome extension  →  Local bridge (127.0.0.1:8765)  →  yt-dlp  →  your disk
 ```
 
+<p align="center">
+  <img src="banner.png" alt="Pegasus in action" width="800" />
+</p>
+
 The extension injects a **Download** button into every YouTube watch page. When clicked, it sends the video URL to a small Python HTTP server running on your machine. The server downloads the video using `yt-dlp` and streams progress back to the extension in real time.
 
 ---
@@ -24,10 +31,10 @@ The extension injects a **Download** button into every YouTube watch page. When 
 - Download any YouTube video up to **1080p** (best video + best audio merged to MP4)
 - Real-time **progress bar** in the browser
 - Works with **age-restricted or member-only** videos via your browser cookies
-- **Copy command** fallback — copies the equivalent CLI command to your clipboard
-- YouTube-native UI — matches YouTube's own color palette, typography, and button shapes
+- **Copy command** fallback - copies the equivalent CLI command to your clipboard
+- YouTube-native UI - matches YouTube's own color palette, typography, and button shapes
 - Full **dark mode** support
-- Completely **local** — no data leaves your machine
+- Completely **local** - no data leaves your machine
 
 ---
 
@@ -38,17 +45,17 @@ The extension injects a **Download** button into every YouTube watch page. When 
 | Python | 3.9+ | [python.org](https://www.python.org/) |
 | ffmpeg | any | `brew install ffmpeg` / `apt install ffmpeg` |
 | Node.js | 18+ | [nodejs.org](https://nodejs.org/) |
-| Chrome / Chromium | any | — |
+| Chrome / Chromium | any | [chrome.com](https://www.google.com/chrome/) |
 
 ---
 
 ## Setup
 
-### 1 — Python bridge
+### 1 - Python bridge
 
 ```bash
 # Clone the repo
-git clone https://github.com/jportiz14/pegasus.git
+git clone https://github.com/misterpoloy/youtube-download-extension.git
 cd pegasus
 
 # Create and activate a virtual environment
@@ -65,7 +72,7 @@ python -m youtube_downloader.bridge
 
 Keep this terminal running while you use the extension.
 
-### 2 — Chrome extension
+### 2 - Chrome extension
 
 ```bash
 cd browser_extension
@@ -80,15 +87,15 @@ Then in Chrome:
 3. Click **Load unpacked**
 4. Select the `browser_extension/dist/` folder
 
-### 3 — Configure
+### 3 - Configure
 
 Click the Pegasus toolbar icon and set:
 
-- **Bridge URL** — `http://127.0.0.1:8765` (default)
-- **Cookies file** — absolute path to your `cookies.txt` (optional, needed for restricted videos)
-- **Output directory** — absolute path to your downloads folder
+- **Bridge URL** - `http://127.0.0.1:8765` (default)
+- **Cookies file** - absolute path to your `cookies.txt` (optional, needed for restricted videos)
+- **Output directory** - absolute path to your downloads folder
 
-### 4 — Download
+### 4 - Download
 
 Open any YouTube video, click the **Download** button in the top-right corner of the page, and hit **Download** in the panel.
 
@@ -127,12 +134,12 @@ Export your cookies in Netscape format using a browser extension such as [Get co
 ```
 pegasus/
 ├── youtube_downloader/
-│   ├── cli.py          # CLI — wraps yt-dlp, handles format selection
-│   └── bridge.py       # HTTP bridge — ThreadingHTTPServer, job queue
+│   ├── cli.py          # CLI - wraps yt-dlp, handles format selection
+│   └── bridge.py       # HTTP bridge - ThreadingHTTPServer, job queue
 ├── browser_extension/
 │   ├── src/
-│   │   ├── background.ts       # Service worker — proxies messages to bridge
-│   │   ├── content/main.ts     # YouTube page injection — floating panel
+│   │   ├── background.ts       # Service worker - proxies messages to bridge
+│   │   ├── content/main.ts     # YouTube page injection - floating panel
 │   │   ├── popup/App.tsx       # Settings popup (React)
 │   │   └── shared/             # Types, storage, bridge client
 │   └── public/manifest.json
@@ -167,4 +174,4 @@ cd browser_extension && npm run lint
 
 ## License
 
-MIT — see [LICENSE](LICENSE).
+MIT - see [LICENSE](LICENSE).

@@ -8,7 +8,6 @@ import uuid
 from dataclasses import asdict, dataclass, field
 from http import HTTPStatus
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
-from pathlib import Path
 from urllib.parse import urlparse
 
 from youtube_downloader.cli import DownloadConfig, run_download
